@@ -1,0 +1,49 @@
+$diameter: 200px;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+.container {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  box-shadow: 0px -1px 37px -14px rgba(0, 0, 0, 0.99), 0px 0px 15px -8px #000000;
+  border-radius: $diameter * 0.2;
+  background-image: linear-gradient(red, orange);
+  padding: 1.2rem;
+  color: whitesmoke;
+  width: 200px;
+  transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 200ms;
+  &:not(:focus):hover {
+    animation: push 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    background-image: linear-gradient(violet, blue);
+    box-shadow: 0px -1px 37px -14px rgba(0, 0, 0, 0.99), 0px 0px 5px -8px #000000;
+  }
+
+  @keyframes push {
+    0% {
+    }
+    100% {
+      transform: scale(0.95);
+      transform: translate(2px, 2px);
+    }
+  }
+}
